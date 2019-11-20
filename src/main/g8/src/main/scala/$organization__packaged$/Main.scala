@@ -1,4 +1,4 @@
-package $package$
+package $organization$
 
 import cats.effect.Console.io._
 import cats.effect.{ExitCode, IO, IOApp}

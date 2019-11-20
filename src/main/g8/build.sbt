@@ -9,7 +9,7 @@ lazy val $name;format="Camel"$ = (project in file("."))
   .settings(commonSettings: _*)
   .settings(
     name := "$name;format="Camel"$"
-  , organization := "$org$"
+  , organization := "$organization$"
   , version := "$version$"
   , libraryDependencies ++= cats ++ console4cats ++ logbackClassic ++ pprint ++ zio ++ testlibs
   )

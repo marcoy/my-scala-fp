@@ -13,6 +13,7 @@ object Dependencies {
   val circeVersion          = "0.12.3"
   val configVersion         = "1.3.3"
   val console4catsVersion   = "0.8.0"
+  val contextualVersion     = "1.2.1"
   val fetchVersion          = "1.2.1"
   val fs2Version            = "2.1.0"
   val guavaVersion          = "28.1-jre"
@@ -98,6 +99,10 @@ object Dependencies {
 
   val console4cats: Seq[ModuleID] = Seq(
     "dev.profunktor" %% "console4cats" % console4catsVersion
+  )
+
+  val contextual: Seq[ModuleID] = Seq(
+    "com.propensive" %% "contextual" % contextualVersion
   )
 
   val fetch: Seq[ModuleID] = Seq(

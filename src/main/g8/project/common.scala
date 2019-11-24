@@ -39,7 +39,7 @@ object Dependencies {
   val servletApiVersion     = "3.1.0"
   val shapelessVersion      = "2.3.3"
   val silencerVersion       = "1.4.2"
-  val simulacrumVersion     = "0.19.0"
+  val simulacrumVersion     = "1.0.0"
   val skunkVersion          = "0.0.6"
   val slf4jVersion          = "1.7.29"
   val slickVersion          = "3.3.1"
@@ -209,7 +209,7 @@ object Dependencies {
   )
 
   val simulacrum: Seq[ModuleID] = Seq(
-    "com.github.mpilquist" %% "simulacrum" % simulacrumVersion
+    "org.typelevel" %% "simulacrum" % simulacrumVersion
   )
 
   val skunk: Seq[ModuleID] = Seq(

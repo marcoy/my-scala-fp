@@ -44,7 +44,7 @@ object Dependencies {
   val slf4jVersion          = "1.7.29"
   val slickVersion          = "3.3.1"
   val zioVersion            = "1.0.0-RC17"
-  val zioCatsVersion        = "2.0.0.0-RC8"
+  val zioCatsVersion        = "2.0.0.0-RC9"
   val zioMonixVersion       = "3.1.0.0-RC1"
   val zioFutureVersion      = "2.12.8.0-RC6"
   val zioReactiveVersion    = "1.0.3.5-RC2"

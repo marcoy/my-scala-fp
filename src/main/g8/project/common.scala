@@ -45,6 +45,7 @@ object Dependencies {
   val slickVersion          = "3.3.1"
   val zioVersion            = "1.0.0-RC17"
   val zioCatsVersion        = "2.0.0.0-RC10"
+  val zioMacrosVersion      = "0.6.0"
   val zioMonixVersion       = "3.1.0.0-RC1"
   val zioFutureVersion      = "2.12.8.0-RC6"
   val zioReactiveVersion    = "1.0.3.5-RC2"
@@ -239,8 +240,10 @@ object Dependencies {
   , "dev.zio" %% "zio-interop-monix"           % zioMonixVersion
   , "dev.zio" %% "zio-interop-future"          % zioFutureVersion
   , "dev.zio" %% "zio-interop-reactivestreams" % zioReactiveVersion
+  , "dev.zio" %% "zio-macros-core"             % zioMacrosVersion
   , "dev.zio" %% "zio-test"                    % zioVersion         % "test"
   , "dev.zio" %% "zio-test-sbt"                % zioVersion         % "test"
+  , "dev.zio" %% "zio-macros-test"             % zioMacrosVersion   % "test"
   )
 }
 

@@ -241,9 +241,9 @@ object Dependencies {
   , "dev.zio" %% "zio-interop-future"          % zioFutureVersion
   , "dev.zio" %% "zio-interop-reactivestreams" % zioReactiveVersion
   , "dev.zio" %% "zio-macros-core"             % zioMacrosVersion
+  , "dev.zio" %% "zio-macros-test"             % zioMacrosVersion
   , "dev.zio" %% "zio-test"                    % zioVersion         % "test"
   , "dev.zio" %% "zio-test-sbt"                % zioVersion         % "test"
-  , "dev.zio" %% "zio-macros-test"             % zioMacrosVersion   % "test"
   )
 }
 
@@ -258,6 +258,7 @@ object Settings {
   , addCompilerPlugin("org.typelevel"  %% "kind-projector"     % Dependencies.kindProjectorVersion cross CrossVersion.full)
   , addCompilerPlugin("com.olegpy"     %% "better-monadic-for" % "0.3.1")
   , fork in run := true
+  , run / connectInput := true
   , updateOptions := updateOptions.value.withCachedResolution(true)
   , resolvers ++= Seq(
       Resolver.typesafeRepo("releases")

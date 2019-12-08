@@ -94,6 +94,7 @@ object Dependencies {
   // , "io.circe" %% "circe-generic-extras" % circeVersion
   // , "io.circe" %% "circe-optics"         % circeVersion
   , "io.circe" %% "circe-parser"         % circeVersion
+  , "io.circe" %% "circe-refined"        % circeVersion
   // , "io.circe" %% "circe-java8"          % circeVersion
   , "io.circe" %% "circe-testing"        % circeVersion % "test"
   )

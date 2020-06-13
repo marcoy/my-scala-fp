@@ -1,8 +1,9 @@
 package $organization$
 
-import cats.effect.{ExitCode, IO, IOApp}
-import cats.implicits._
+import zio._
+import zio.console._
 
-object Main extends IOApp {
-  override def run(args: List[String]): IO[ExitCode] = IO.pure(ExitCode.Success)
+object Main extends App {
+  override def run(args: List[String]): ZIO[zio.ZEnv, Nothing, ExitCode] =
+    putStrLn("Hello World").exitCode
 }

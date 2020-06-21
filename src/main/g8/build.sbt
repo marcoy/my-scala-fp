@@ -12,6 +12,6 @@ lazy val $name;format="Camel"$ = (project in file("."))
     name := "$name;format="Camel"$"
   , organization := "$organization$"
   , version := "$version$"
-  , libraryDependencies ++= cats ++ droste ++ newtype ++ pprint ++ refined ++ shapeless ++ slf4j
+  , libraryDependencies ++= cats ++ droste ++ guava ++ newtype ++ pprint ++ refined ++ shapeless ++ slf4j
                          ++ simulacrum ++ zio ++ testlibs
   )

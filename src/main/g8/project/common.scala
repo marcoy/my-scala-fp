@@ -15,7 +15,7 @@ object Versions {
   val kindProjector = "0.11.0"
   val logbackClassic = "1.2.3"
   val mockito = "3.3.3"
-  val monocle = "2.0.4"
+  val monocle = "2.0.5"
   val newtype = "0.4.4"
   val pprint = "0.5.9"
   val refined = "0.9.14"
@@ -25,10 +25,10 @@ object Versions {
   val silencer = "1.7.0"
   val simulacrum = "1.0.0"
   val slf4j = "1.7.30"
-  val zio = "1.0.0-RC20"
-  val zioCats = "2.1.3.0-RC15"
-  val zioQuery = "0.2.2"
-  val zioLogging = "0.3.1"
+  val zio = "1.0.0-RC21"
+  val zioCats = "2.1.3.0-RC16"
+  val zioQuery = "0.2.3"
+  val zioLogging = "0.3.2"
 }
 
 object Dependencies {
@@ -133,7 +133,7 @@ object Dependencies {
 
 object Settings {
   lazy val commonSettings = Seq(
-    scalaVersion := "2.13.2"
+    scalaVersion := "2.13.3"
   , scalacOptions ++= scalacFlags
   , scalacOptions in (Compile, console) ~= (_.filterNot(Set(
       "-Ywarn-unused:imports",

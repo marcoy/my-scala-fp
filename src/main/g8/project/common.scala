@@ -4,9 +4,9 @@ import ScalacOptions._
 
 object Versions {
   val betterMonadicFor = "0.3.1"
-  val cats = "2.1.1"
+  val cats = "2.2.0"
   val catsColl = "0.9.0"
-  val catsEffect = "2.1.3"
+  val catsEffect = "2.1.4"
   val catsMtl = "0.7.1"
   val circe = "0.13.0"
   val droste = "0.8.0"
@@ -17,7 +17,7 @@ object Versions {
   val mockito = "3.3.3"
   val monocle = "2.0.5"
   val newtype = "0.4.4"
-  val pprint = "0.5.9"
+  val pprint = "0.6.0"
   val refined = "0.9.14"
   val scalatest= "3.1.2"
   val scalacheck = "1.14.3"
@@ -25,10 +25,11 @@ object Versions {
   val silencer = "1.7.0"
   val simulacrum = "1.0.0"
   val slf4j = "1.7.30"
-  val zio = "1.0.0-RC21"
-  val zioCats = "2.1.3.0-RC16"
-  val zioQuery = "0.2.3"
-  val zioLogging = "0.3.2"
+  val sttp = "2.2.9"
+  val zio = "1.0.2"
+  val zioCats = "2.2.0.0"
+  val zioQuery = "0.2.5"
+  val zioLogging = "0.5.2"
 }
 
 object Dependencies {
@@ -114,6 +115,12 @@ object Dependencies {
     "org.typelevel" %% "simulacrum" % Versions.simulacrum
   )
 
+  val sttp: Seq[ModuleID] = Seq(
+    "com.softwaremill.sttp.client" %% "core"                          % Versions.sttp
+  , "com.softwaremill.sttp.client" %% "async-http-client-backend-zio" % Versions.sttp
+  , "com.softwaremill.sttp.client" %% "slf4j-backend"                 % Versions.sttp
+  )
+
   val testlibs: Seq[ModuleID] = Seq(
     "org.scalatest"  %% "scalatest"                   % Versions.scalatest
   , "org.scalacheck" %% "scalacheck"                  % Versions.scalacheck
@@ -129,6 +136,12 @@ object Dependencies {
   , "dev.zio" %% "zio-test-sbt"                % Versions.zio         % "test"
   , "dev.zio" %% "zio-test-magnolia"           % Versions.zio         % "test"
   )
+
+  val zioLogging: Seq[ModuleID] = Seq(
+    "dev.zio" %% "zio-logging"       % Versions.zioLogging
+  , "dev.zio" %% "zio-logging-slf4j" % Versions.zioLogging
+  )
+
 }
 
 object Settings {

@@ -25,11 +25,10 @@ object Versions {
   val silencer = "1.7.0"
   val simulacrum = "1.0.0"
   val slf4j = "1.7.30"
-  val sttp = "2.2.9"
-  val zio = "1.0.2"
-  val zioCats = "2.2.0.0"
+  val zio = "1.0.3"
+  val zioCats = "2.2.0.1"
   val zioQuery = "0.2.5"
-  val zioLogging = "0.5.2"
+  val zioLogging = "0.5.3"
 }
 
 object Dependencies {

@@ -24,7 +24,7 @@ object Versions {
   val guava            = "29.0-jre"
   val http4s           = "0.21.7"
   val http4sJwtAuth    = "0.0.5"
-  val kindProjector    = "0.11.0"
+  val kindProjector    = "0.11.1"
   val kittens          = "2.1.0"
   val logbackClassic   = "1.2.3"
   val meowMtl          = "0.4.1"
@@ -250,7 +250,7 @@ object Dependencies {
 
 object Settings {
   lazy val commonSettings = Seq(
-    scalaVersion := "2.13.3",
+    scalaVersion := "2.13.4",
     scalacOptions ++= scalacFlags,
     scalacOptions in (Compile, console) ~= (_.filterNot(
       Set(

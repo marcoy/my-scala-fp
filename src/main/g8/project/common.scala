@@ -42,7 +42,7 @@ object Versions {
   val slf4j            = "1.7.30"
   val slick            = "3.3.3"
   val shapeless        = "2.3.3"
-  val silencer         = "1.7.1"
+  val sttp             = "3.0.0-RC11"
   val upickle          = "1.2.2"
   val zio              = "1.0.3"
   val zioActors        = "0.0.7+34-6e140444-SNAPSHOT"
@@ -204,9 +204,12 @@ object Dependencies {
     "com.chuusai" %% "shapeless" % Versions.shapeless
   )
 
-  val silencer: Seq[ModuleID] = Seq(
-    compilerPlugin("com.github.ghik" %% "silencer-plugin" % Versions.silencer),
-    "com.github.ghik" %% "silencer-lib" % Versions.silencer % Provided
+  val sttp: Seq[ModuleID] = Seq(
+    "com.softwaremill.sttp.client3" %% "core"                          % Versions.sttp,
+    "com.softwaremill.sttp.client3" %% "circe"                         % Versions.sttp,
+    "com.softwaremill.sttp.client3" %% "async-http-client-backend-zio" % Versions.sttp,
+    "com.softwaremill.sttp.client3" %% "httpclient-backend-zio"        % Versions.sttp,
+    "com.softwaremill.sttp.client3" %% "slf4j-backend"                 % Versions.sttp
   )
 
   val simulacrum: Seq[ModuleID] = Seq(
@@ -215,6 +218,7 @@ object Dependencies {
 
   val slick: Seq[ModuleID] = Seq(
     "com.typesafe.slick" %% "slick"          % Versions.slick,
+    "com.typesafe.slick" %% "slick-codegen"  % Versions.slick,
     "com.typesafe.slick" %% "slick-hikaricp" % Versions.slick,
     "com.typesafe.slick" %% "slick-testkit"  % Versions.slick % "test"
   )

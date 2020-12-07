@@ -14,18 +14,28 @@ object ExtraDeps {
 
     val jsch            = "0.1.55"
     val scalacheckFaker = "5.0.10"
+    val scalaTags       = "0.9.2"
     val selenium        = "3.141.59"
     val sshj            = "0.30.0"
-    val sttp            = "2.2.9"
+    val sttp            = "3.0.0-RC11"
     val zioAws          = "2.14.7.0"
+    val rocksDbJni      = "6.13.3"
   }
 
   val jsch: Seq[ModuleID] = Seq(
     "com.jcraft" % "jsch" % Versions.jsch
   )
 
+  val rocksdb: Seq[ModuleID] = Seq(
+    "org.rocksdb" % "rocksdbjni" % Versions.rocksDbJni
+  )
+
   val scalacheckFaker: Seq[ModuleID] = Seq(
     "io.github.etspaceman" %% "scalacheck-faker" % Versions.scalacheckFaker
+  )
+
+  val scalaTags: Seq[ModuleID] = Seq(
+    "com.lihaoyi" %% "scalatags" % Versions.scalaTags
   )
 
   val selenium: Seq[ModuleID] = Seq(
@@ -38,9 +48,11 @@ object ExtraDeps {
   )
 
   val sttp: Seq[ModuleID] = Seq(
-    "com.softwaremill.sttp.client" %% "core"                          % Versions.sttp,
-    "com.softwaremill.sttp.client" %% "async-http-client-backend-zio" % Versions.sttp,
-    "com.softwaremill.sttp.client" %% "slf4j-backend"                 % Versions.sttp
+    "com.softwaremill.sttp.client3" %% "core"                          % Versions.sttp,
+    "com.softwaremill.sttp.client3" %% "circe"                         % Versions.sttp,
+    "com.softwaremill.sttp.client3" %% "async-http-client-backend-zio" % Versions.sttp,
+    "com.softwaremill.sttp.client3" %% "httpclient-backend-zio"        % Versions.sttp,
+    "com.softwaremill.sttp.client3" %% "slf4j-backend"                 % Versions.sttp
   )
 
   val zioAws: Seq[ModuleID] = Seq(

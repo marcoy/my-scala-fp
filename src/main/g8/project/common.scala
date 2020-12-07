@@ -9,9 +9,9 @@ object Versions {
   val akkaHttp         = "10.2.1"
   val betterMonadicFor = "0.3.1"
   val betterFiles      = "3.9.1"
-  val cats             = "2.2.0"
+  val cats             = "2.3.0"
   val catsCollections  = "0.9.0"
-  val catsEffect       = "2.2.0"
+  val catsEffect       = "2.3.0"
   val catsMacros       = "2.1.1"
   val catsMtl          = "0.7.1"
   val catsTagless      = "0.11"
@@ -21,8 +21,8 @@ object Versions {
   val droste           = "0.8.0"
   val enumeratum       = "1.6.1"
   val fs2              = "2.4.4"
-  val guava            = "29.0-jre"
-  val http4s           = "0.21.7"
+  val guava            = "30.0-jre"
+  val http4s           = "0.21.13"
   val http4sJwtAuth    = "0.0.5"
   val kindProjector    = "0.11.1"
   val kittens          = "2.1.0"
@@ -34,6 +34,7 @@ object Versions {
   val pprint           = "0.6.0"
   val pureconfig       = "0.14.0"
   val refined          = "0.9.17"
+  val rhoSwagger       = "0.21.0-RC1"
   val scalaCheck       = "1.14.3"
   val scalaTest        = "3.2.2"
   val servletApi       = "4.0.1"
@@ -42,12 +43,13 @@ object Versions {
   val slick            = "3.3.3"
   val shapeless        = "2.3.3"
   val silencer         = "1.7.1"
+  val upickle          = "1.2.2"
   val zio              = "1.0.3"
-  val zioActors        = "0.0.7+23-a01bf014-SNAPSHOT"
+  val zioActors        = "0.0.7+34-6e140444-SNAPSHOT"
   val zioCats          = "2.2.0.1"
-  val zioConfig        = "1.0.0-RC29"
-  val zioQuery         = "0.2.5"
-  val zioLogging       = "0.5.3"
+  val zioConfig        = "1.0.0-RC31"
+  val zioQuery         = "0.2.5+29-b0711b81-SNAPSHOT"
+  val zioLogging       = "0.5.4"
   val zioProcess       = "0.2.0"
 }
 
@@ -183,6 +185,11 @@ object Dependencies {
     "eu.timepit" %% "refined-shapeless"  % Versions.refined
   )
 
+  val rhoSwagger: Seq[ModuleID] = Seq(
+    "org.http4s" %% "rho-swagger"    % Versions.rhoSwagger,
+    "org.http4s" %% "rho-swagger-ui" % Versions.rhoSwagger
+  )
+
   val slf4j: Seq[ModuleID] = Seq(
     "org.slf4j" % "slf4j-api" % Versions.slf4j
   ) ++ logbackClassic
@@ -216,6 +223,12 @@ object Dependencies {
     "org.mockito"     % "mockito-core" % Versions.mockito
   ) map (_ % "test")
 
+  val upickle: Seq[ModuleID] = Seq(
+    "com.lihaoyi" %% "upickle" % Versions.upickle,
+    "com.lihaoyi" %% "ujson"   % Versions.upickle,
+    "com.lihaoyi" %% "upack"   % Versions.upickle
+  )
+
   val zio: Seq[ModuleID] = Seq(
     "dev.zio" %% "zio"              % Versions.zio,
     "dev.zio" %% "zio-streams"      % Versions.zio,
@@ -245,6 +258,10 @@ object Dependencies {
 
   val zioProcess: Seq[ModuleID] = Seq(
     "dev.zio" %% "zio-process" % Versions.zioProcess
+  )
+
+  val zioQuery: Seq[ModuleID] = Seq(
+    "dev.zio" %% "zio-query" % Versions.zioQuery
   )
 }
 

@@ -51,6 +51,8 @@ object Versions {
   val zioQuery         = "0.2.5+29-b0711b81-SNAPSHOT"
   val zioLogging       = "0.5.4"
   val zioProcess       = "0.2.0"
+
+  val scala = "2.13.4"
 }
 
 object Dependencies {
@@ -267,7 +269,7 @@ object Dependencies {
 
 object Settings {
   lazy val commonSettings = Seq(
-    scalaVersion := "2.13.4",
+    scalaVersion := Versions.scala,
     scalacOptions ++= scalacFlags,
     scalacOptions in (Compile, console) ~= (_.filterNot(
       Set(

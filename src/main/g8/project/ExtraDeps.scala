@@ -12,15 +12,19 @@ object ExtraDeps {
       val vfs     = "2.6.0"
     }
 
+    val caffeine        = "2.8.8"
+    val chimney         = "0.6.1"
+    val decline         = "1.3.0"
     val doobie          = "0.9.4"
     val flyway          = "7.1.1"
     val jsch            = "0.1.55"
+    val kantan          = "0.6.1"
     val postgresDriver  = "42.2.18.jre7"
     val quill           = "3.5.3"
     val scalacheckFaker = "5.0.10"
     val scalaTags       = "0.9.2"
     val selenium        = "3.141.59"
-    val sqlite          = "3.32.3.2"
+    val sqlite          = "3.34.0"
     val sshj            = "0.30.0"
     val sttp            = "3.0.0-RC11"
     val rocksDbJni      = "6.13.3"
@@ -28,8 +32,33 @@ object ExtraDeps {
     val zioAws          = "2.14.7.0"
   }
 
+  val caffeine: Seq[ModuleID] = Seq(
+    "com.github.ben-manes.caffeine" % "caffeine" % Versions.caffeine
+  )
+
+  val chimney: Seq[ModuleID] = Seq(
+    "io.scalaland" %% "chimney"      % Versions.chimney,
+    "io.scalaland" %% "chimney-cats" % Versions.chimney
+  )
+
+  val decline: Seq[ModuleID] = Seq(
+    "com.monovore" %% "decline"            % Versions.decline,
+    "com.monovore" %% "decline-refined"    % Versions.decline,
+    "com.monovore" %% "decline-enumeratum" % Versions.decline
+  )
+
   val jsch: Seq[ModuleID] = Seq(
     "com.jcraft" % "jsch" % Versions.jsch
+  )
+
+  val kantan: Seq[ModuleID] = Seq(
+    "com.nrinaudo" %% "kantan.csv"            % Versions.kantan,
+    "com.nrinaudo" %% "kantan.csv-java8"      % Versions.kantan,
+    "com.nrinaudo" %% "kantan.csv-cats"       % Versions.kantan,
+    "com.nrinaudo" %% "kantan.csv-generic"    % Versions.kantan,
+    "com.nrinaudo" %% "kantan.csv-refined"    % Versions.kantan,
+    "com.nrinaudo" %% "kantan.csv-enumeratum" % Versions.kantan,
+    "com.nrinaudo" %% "kantan.csv-jackson"    % Versions.kantan
   )
 
   val rocksdb: Seq[ModuleID] = Seq(

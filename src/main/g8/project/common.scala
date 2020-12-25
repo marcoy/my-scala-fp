@@ -9,48 +9,48 @@ object Versions {
   val akkaHttp         = "10.2.1"
   val betterMonadicFor = "0.3.1"
   val betterFiles      = "3.9.1"
-  val cats             = "2.3.0"
-  val catsCollections  = "0.9.0"
-  val catsEffect       = "2.3.0"
+  val cats             = "2.3.1"
+  val catsCollections  = "0.9.1"
+  val catsEffect       = "2.3.1"
   val catsMacros       = "2.1.1"
   val catsMtl          = "0.7.1"
-  val catsTagless      = "0.11"
+  val catsTagless      = "0.12"
   val circe            = "0.13.0"
   val circeDroste      = "0.2.0"
   val contextual       = "1.2.1"
   val droste           = "0.8.0"
   val enumeratum       = "1.6.1"
   val fs2              = "2.4.4"
-  val guava            = "30.0-jre"
-  val http4s           = "0.21.13"
+  val guava            = "30.1-jre"
+  val http4s           = "0.21.14"
   val http4sJwtAuth    = "0.0.5"
-  val kindProjector    = "0.11.1"
+  val kindProjector    = "0.11.2"
   val kittens          = "2.1.0"
   val logbackClassic   = "1.2.3"
   val meowMtl          = "0.4.1"
-  val mockito          = "3.5.13"
+  val mockito          = "3.6.28"
   val monocle          = "2.1.0"
   val newtype          = "0.4.4"
   val pprint           = "0.6.0"
   val pureconfig       = "0.14.0"
-  val refined          = "0.9.17"
+  val refined          = "0.9.19"
   val rhoSwagger       = "0.21.0-RC1"
-  val scalaCheck       = "1.14.3"
-  val scalaTest        = "3.2.2"
+  val scalaCheck       = "1.15.2"
+  val scalaTest        = "3.2.3"
   val servletApi       = "4.0.1"
-  val simulacrum       = "1.0.0"
+  val simulacrum       = "1.0.1"
   val slf4j            = "1.7.30"
   val slick            = "3.3.3"
   val shapeless        = "2.3.3"
-  val sttp             = "3.0.0-RC11"
+  val sttp             = "3.0.0-RC13"
   val upickle          = "1.2.2"
   val zio              = "1.0.3"
   val zioActors        = "0.0.7+34-6e140444-SNAPSHOT"
   val zioCats          = "2.2.0.1"
-  val zioConfig        = "1.0.0-RC31"
-  val zioQuery         = "0.2.5+29-b0711b81-SNAPSHOT"
+  val zioConfig        = "1.0.0-RC31-1"
+  val zioQuery         = "0.2.6"
   val zioLogging       = "0.5.4"
-  val zioProcess       = "0.2.0"
+  val zioProcess       = "0.3.0"
 
   val scala = "2.13.4"
 }
@@ -122,7 +122,11 @@ object Dependencies {
     "com.beachape" %% "enumeratum"            % Versions.enumeratum,
     "com.beachape" %% "enumeratum-cats"       % Versions.enumeratum,
     "com.beachape" %% "enumeratum-circe"      % Versions.enumeratum,
-    "com.beachape" %% "enumeratum-scalacheck" % Versions.enumeratum
+    "com.beachape" %% "enumeratum-doobie"     % "1.6.0",
+    "com.beachape" %% "enumeratum-macros"     % Versions.enumeratum,
+    "com.beachape" %% "enumeratum-quill"      % "1.6.0",
+    "com.beachape" %% "enumeratum-scalacheck" % Versions.enumeratum % "test",
+    "com.beachape" %% "enumeratum-test"       % Versions.enumeratum % "test"
   )
 
   val fs2: Seq[ModuleID] = Seq(
@@ -236,12 +240,14 @@ object Dependencies {
   )
 
   val zio: Seq[ModuleID] = Seq(
-    "dev.zio" %% "zio"              % Versions.zio,
-    "dev.zio" %% "zio-streams"      % Versions.zio,
-    "dev.zio" %% "zio-interop-cats" % Versions.zioCats,
-    "dev.zio" %% "zio-macros"       % Versions.zio,
-    "dev.zio" %% "zio-test"         % Versions.zio % "test",
-    "dev.zio" %% "zio-test-sbt"     % Versions.zio % "test"
+    "dev.zio" %% "zio"               % Versions.zio,
+    "dev.zio" %% "zio-streams"       % Versions.zio,
+    "dev.zio" %% "zio-interop-cats"  % Versions.zioCats,
+    "dev.zio" %% "zio-macros"        % Versions.zio,
+    "dev.zio" %% "zio-test"          % Versions.zio % "test",
+    "dev.zio" %% "zio-test-sbt"      % Versions.zio % "test",
+    "dev.zio" %% "zio-test-intellij" % Versions.zio % "test",
+    "dev.zio" %% "zio-test-magnolia" % Versions.zio % "test"
   )
 
   val zioActors: Seq[ModuleID] = Seq(
@@ -272,6 +278,23 @@ object Dependencies {
 }
 
 object Settings {
+  object NexusSettings {
+    private val unraidNexus = "http://192.168.1.166:8081"
+
+    lazy val unraid = Seq(
+      publishTo := {
+        if (isSnapshot.value)
+          Some(("snapshot" at unraidNexus + "/repository/maven-snapshots").withAllowInsecureProtocol(true))
+        else
+          Some(("releases" at unraidNexus + "/repository/maven-releases").withAllowInsecureProtocol(true))
+      },
+      resolvers ++= Seq(
+        ("unraid-maven-releases" at unraidNexus + "/repository/maven-releases/").withAllowInsecureProtocol(true),
+        ("unraid-maven-snapshots" at unraidNexus + "/repository/maven-snapshots/").withAllowInsecureProtocol(true)
+      )
+    )
+  }
+
   lazy val commonSettings = Seq(
     scalaVersion := Versions.scala,
     scalacOptions ++= scalacFlags,
@@ -293,5 +316,5 @@ object Settings {
       Resolver.sonatypeRepo("releases"),
       Resolver.sonatypeRepo("snapshots")
     )
-  )
+  ) ++ NexusSettings.unraid
 }

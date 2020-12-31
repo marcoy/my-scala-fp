@@ -16,7 +16,7 @@ object ExtraDeps {
     val chimney         = "0.6.1"
     val decline         = "1.3.0"
     val doobie          = "0.9.4"
-    val flyway          = "7.1.1"
+    val flyway          = "7.3.2"
     val jsch            = "0.1.55"
     val kantan          = "0.6.1"
     val postgresDriver  = "42.2.18.jre7"
@@ -27,7 +27,9 @@ object ExtraDeps {
     val sqlite          = "3.34.0"
     val sshj            = "0.30.0"
     val sttp            = "3.0.0-RC11"
-    val rocksDbJni      = "6.13.3"
+    val rocksDbJni      = "6.14.6"
+    val scodecBits      = "1.1.23"
+    val scodecCore      = "1.11.7"
     val slickPg         = "0.19.3"
     val zioAws          = "2.14.7.0"
   }
@@ -143,6 +145,11 @@ object ExtraDeps {
     "io.getquill" %% "quill-jdbc"           % Versions.quill,
     "io.getquill" %% "quill-codegen"        % Versions.quill,
     "io.getquill" %% "quill-codegen-jdbc"   % Versions.quill
+  )
+
+  val scodec: Seq[ModuleID] = Seq(
+    "org.scodec" %% "scodec-bits" % Versions.scodecBits,
+    "org.scodec" %% "scodec-core" % Versions.scodecCore
   )
 
   lazy val slickPg = Seq(

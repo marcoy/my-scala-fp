@@ -2,6 +2,9 @@ import Dependencies._
 import Settings._
 
 lazy val root = project
+  .settings(
+    scalaVersion := Versions.scala
+  )
   .aggregate(
     $name;format="Camel"$
   )

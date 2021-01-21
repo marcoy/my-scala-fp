@@ -6,7 +6,7 @@ addSbtPlugin("se.marcuslonnberg" % "sbt-docker" % "1.8.0")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.8.0-RC14")
 
-addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.5.2-27-797adb1")
+addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.5.2-28-097fbe0")
 
 addSbtPlugin("ch.epfl.scala" % "sbt-missinglink" % "0.3.1")
 

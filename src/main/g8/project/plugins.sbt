@@ -1,16 +1,17 @@
 resolvers += Resolver.bintrayIvyRepo("rtimush", "sbt-plugin-snapshots")
+resolvers += Resolver.sonatypeRepo("snapshots")
 
 addSbtPlugin("io.spray" % "sbt-revolver" % "0.9.1")
 
-addSbtPlugin("se.marcuslonnberg" % "sbt-docker" % "1.8.0")
+addSbtPlugin("se.marcuslonnberg" % "sbt-docker" % "1.8.2")
 
-addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.8.0-RC14")
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.8.1")
 
-addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.5.2-28-097fbe0")
+addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.5.3-9-315c94d-SNAPSHOT")
 
-addSbtPlugin("ch.epfl.scala" % "sbt-missinglink" % "0.3.1")
+addSbtPlugin("ch.epfl.scala" % "sbt-missinglink" % "0.3.2")
 
-addSbtPlugin("com.github.cb372" % "sbt-explicit-dependencies" % "0.2.15")
+addSbtPlugin("com.github.cb372" % "sbt-explicit-dependencies" % "0.2.16")
 
 addSbtPlugin("com.typesafe" % "sbt-mima-plugin" % "0.8.1")
 

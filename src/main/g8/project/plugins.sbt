@@ -7,7 +7,7 @@ addSbtPlugin("se.marcuslonnberg" % "sbt-docker" % "1.8.2")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.8.1")
 
-addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.5.3-9-315c94d-SNAPSHOT")
+addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.5.4-9-5529508-SNAPSHOT")
 
 addSbtPlugin("ch.epfl.scala" % "sbt-missinglink" % "0.3.2")
 

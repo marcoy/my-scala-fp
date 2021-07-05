@@ -52,7 +52,7 @@ object Versions {
   val zioLogging       = "0.5.11"
   val zioProcess       = "0.3.0"
 
-  val scala = "2.13.6"
+  val scala = "3.0.0"
 }
 
 object Dependencies {

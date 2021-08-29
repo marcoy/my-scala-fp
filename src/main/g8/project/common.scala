@@ -306,7 +306,7 @@ object Settings {
     )),
     addCompilerPlugin("org.typelevel" %% "kind-projector"     % Versions.kindProjector cross CrossVersion.full),
     addCompilerPlugin("com.olegpy"    %% "better-monadic-for" % Versions.betterMonadicFor),
-    fork in run := true,
+    run / fork := true,
     run / connectInput := true,
     updateOptions := updateOptions.value.withCachedResolution(true),
     testFrameworks += new TestFramework("zio.test.sbt.ZTestFramework"),

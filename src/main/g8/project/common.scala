@@ -11,45 +11,45 @@ object Versions {
   val betterFiles      = "3.9.1"
   val cats             = "2.6.1"
   val catsCollections  = "0.9.3"
-  val catsEffect       = "3.1.1"
+  val catsEffect       = "2.5.1"
   val catsMacros       = "2.1.1"
   val catsMtl          = "0.7.1"
   val catsTagless      = "0.14.0"
-  val circe            = "0.13.0"
+  val circe            = "0.14.1"
   val circeDroste      = "0.2.0"
   val contextual       = "1.2.1"
   val droste           = "0.8.0"
-  val enumeratum       = "1.6.1"
-  val fs2              = "2.4.4"
+  val enumeratum       = "1.7.0"
+  val fs2              = "3.0.6"
   val guava            = "30.1.1-jre"
-  val http4s           = "0.21.21"
-  val http4sJwtAuth    = "0.0.6"
-  val kindProjector    = "0.13.0"
+  val http4s           = "0.21.28"
+  val http4sJwtAuth    = "0.0.7"
+  val kindProjector    = "0.13.2"
   val kittens          = "2.1.0"
-  val logbackClassic   = "1.2.3"
+  val logbackClassic   = "1.2.6"
   val meowMtl          = "0.4.1"
-  val mockito          = "3.11.2"
+  val mockito          = "3.12.4"
   val monocle          = "2.1.0"
   val newtype          = "0.4.4"
   val pprint           = "0.6.6"
   val pureconfig       = "0.14.0"
-  val refined          = "0.9.26"
+  val refined          = "0.9.27"
   val rhoSwagger       = "0.21.0-RC2"
   val scalaCheck       = "1.15.4"
   val scalaTest        = "3.2.9"
   val servletApi       = "4.0.1"
   val simulacrum       = "1.0.1"
-  val slf4j            = "1.7.31"
+  val slf4j            = "1.7.32"
   val slick            = "3.3.3"
   val shapeless        = "2.3.7"
-  val sttp             = "3.3.9"
+  val sttp             = "3.3.14"
   val upickle          = "1.2.2"
-  val zio              = "1.0.9"
+  val zio              = "1.0.11"
   val zioActors        = "0.0.9+3-737ae987-SNAPSHOT"
-  val zioCats          = "3.1.1.0"
-  val zioConfig        = "1.0.2"
+  val zioCats          = "2.5.1.0"
+  val zioConfig        = "1.0.6"
   val zioQuery         = "0.2.6"
-  val zioLogging       = "0.5.11"
+  val zioLogging       = "0.5.12"
   val zioProcess       = "0.3.0"
 
   val scala = "2.13.6"
@@ -122,9 +122,9 @@ object Dependencies {
     "com.beachape" %% "enumeratum"            % Versions.enumeratum,
     "com.beachape" %% "enumeratum-cats"       % Versions.enumeratum,
     "com.beachape" %% "enumeratum-circe"      % Versions.enumeratum,
-    "com.beachape" %% "enumeratum-doobie"     % "1.6.0",
-    "com.beachape" %% "enumeratum-macros"     % Versions.enumeratum,
-    "com.beachape" %% "enumeratum-quill"      % "1.6.0",
+    "com.beachape" %% "enumeratum-doobie"     % Versions.enumeratum,
+    // "com.beachape" %% "enumeratum-macros"     % Versions.enumeratum,
+    "com.beachape" %% "enumeratum-quill"      % Versions.enumeratum,
     "com.beachape" %% "enumeratum-scalacheck" % Versions.enumeratum % "test",
     "com.beachape" %% "enumeratum-test"       % Versions.enumeratum % "test"
   )
@@ -298,7 +298,7 @@ object Settings {
   lazy val commonSettings = Seq(
     scalaVersion := Versions.scala,
     scalacOptions ++= scalacFlags,
-    scalacOptions in (Compile, console) ~= (_.filterNot(
+    Compile / console / scalacOptions ~= (_.filterNot(
       Set(
         "-Ywarn-unused:imports",
         "-Xfatal-warnings"

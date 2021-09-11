@@ -14,17 +14,17 @@ object ExtraDeps {
 
     val caffeine        = "2.8.8"
     val chimney         = "0.6.1"
-    val decline         = "2.0.0"
-    val doobie          = "0.12.1"
-    val flyway          = "7.7.2"
+    val decline         = "2.1.0"
+    val doobie          = "1.0.0-M5"
+    val flyway          = "7.15.0"
     val jsch            = "0.1.55"
     val kantan          = "0.6.1"
-    val postgresDriver  = "42.2.19"
-    val quill           = "3.6.1"
+    val postgresDriver  = "42.2.23"
+    val quill           = "3.10.0"
     val scalacheckFaker = "5.0.10"
     val scalaTags       = "0.9.2"
     val selenium        = "3.141.59"
-    val sqlite          = "3.34.0"
+    val sqlite          = "3.36.0.3"
     val sshj            = "0.30.0"
     val sttp            = "3.0.0-RC11"
     val rocksDbJni      = "6.15.2"
@@ -45,8 +45,8 @@ object ExtraDeps {
 
   val decline: Seq[ModuleID] = Seq(
     "com.monovore" %% "decline"            % Versions.decline,
-    "com.monovore" %% "decline-refined"    % Versions.decline,
-    "com.monovore" %% "decline-enumeratum" % Versions.decline
+    "com.monovore" %% "decline-refined"    % Versions.decline
+//    "com.monovore" %% "decline-enumeratum" % Versions.decline
   )
 
   val jsch: Seq[ModuleID] = Seq(
@@ -143,6 +143,7 @@ object ExtraDeps {
   val quill: Seq[ModuleID] = Seq(
     "io.getquill" %% "quill-async-postgres" % Versions.quill,
     "io.getquill" %% "quill-jdbc"           % Versions.quill,
+    "io.getquill" %% "quill-jdbc-zio"       % Versions.quill,
     "io.getquill" %% "quill-codegen"        % Versions.quill,
     "io.getquill" %% "quill-codegen-jdbc"   % Versions.quill
   )

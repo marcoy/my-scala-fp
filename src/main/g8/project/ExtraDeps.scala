@@ -12,15 +12,15 @@ object ExtraDeps {
       val vfs     = "2.6.0"
     }
 
-    val caffeine        = "2.8.8"
+    val caffeine        = "3.0.3"
     val chimney         = "0.6.1"
-    val decline         = "2.1.0"
-    val doobie          = "1.0.0-M5"
+    val decline         = "2.0.0"
+    val doobie          = "0.13.4"
     val flyway          = "7.15.0"
     val jsch            = "0.1.55"
     val kantan          = "0.6.1"
     val postgresDriver  = "42.2.23"
-    val quill           = "3.10.0"
+    val quill           = "3.7.2"
     val scalacheckFaker = "5.0.10"
     val scalaTags       = "0.9.2"
     val selenium        = "3.141.59"
@@ -45,8 +45,8 @@ object ExtraDeps {
 
   val decline: Seq[ModuleID] = Seq(
     "com.monovore" %% "decline"            % Versions.decline,
-    "com.monovore" %% "decline-refined"    % Versions.decline
-//    "com.monovore" %% "decline-enumeratum" % Versions.decline
+    "com.monovore" %% "decline-refined"    % Versions.decline,
+    "com.monovore" %% "decline-enumeratum" % Versions.decline
   )
 
   val jsch: Seq[ModuleID] = Seq(
@@ -128,8 +128,8 @@ object ExtraDeps {
     "org.tpolecat" %% "doobie-hikari"    % Versions.doobie,
     "org.tpolecat" %% "doobie-postgres"  % Versions.doobie,
     "org.tpolecat" %% "doobie-quill"     % Versions.doobie,
-    "org.tpolecat" %% "doobie-specs2"    % Versions.doobie % "test",
-    "org.tpolecat" %% "doobie-scalatest" % Versions.doobie % "test"
+    "org.tpolecat" %% "doobie-specs2"    % Versions.doobie % Test,
+    "org.tpolecat" %% "doobie-scalatest" % Versions.doobie % Test
   )
 
   val flyway: Seq[ModuleID] = Seq(

@@ -48,7 +48,7 @@ object Versions {
   val zioActors        = "0.0.9+3-737ae987-SNAPSHOT"
   val zioCats          = "2.5.1.0"
   val zioConfig        = "1.0.6"
-  val zioQuery         = "0.2.6"
+  val zioQuery         = "0.2.10"
   val zioLogging       = "0.5.12"
   val zioProcess       = "0.3.0"
 

@@ -295,6 +295,11 @@ object Settings {
     )
   }
 
+  lazy val rootSettings = Seq(
+    scalaVersion := Versions.scala,
+    publish / skip := true
+  ) ++ NexusSettings.unraid
+
   lazy val commonSettings = Seq(
     scalaVersion := Versions.scala,
     scalacOptions ++= scalacFlags,

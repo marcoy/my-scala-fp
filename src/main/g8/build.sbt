@@ -1,6 +1,8 @@
 import Dependencies._
 import Settings._
 
+Global / onChangedBuildSource := ReloadOnSourceChanges
+
 lazy val root = project
   .settings(
     scalaVersion := Versions.scala

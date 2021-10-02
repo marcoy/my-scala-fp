@@ -319,7 +319,9 @@ object Settings {
       Resolver.typesafeRepo("releases"),
       Resolver.typesafeRepo("snapshots"),
       Resolver.sonatypeRepo("releases"),
-      Resolver.sonatypeRepo("snapshots")
+      Resolver.sonatypeRepo("snapshots"),
+      "apache-snapshots" at "https://repository.apache.org/content/repositories/snapshots/",
+      "apache-releases"  at "https://repository.apache.org/content/repositories/releases/"
     )
   ) ++ NexusSettings.unraid
 }

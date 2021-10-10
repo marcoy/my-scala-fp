@@ -21,14 +21,14 @@ object Versions {
   val droste           = "0.8.0"
   val enumeratum       = "1.7.0"
   val fs2              = "3.0.6"
-  val guava            = "30.1.1-jre"
-  val http4s           = "0.23.3"
+  val guava            = "31.0.1-jre"
+  val http4s           = "0.23.5"
   val http4sJwtAuth    = "1.0.0"
   val kindProjector    = "0.13.2"
   val kittens          = "2.1.0"
   val logbackClassic   = "1.2.6"
   val meowMtl          = "0.4.1"
-  val mockito          = "3.12.4"
+  val mockito          = "4.0.0"
   val monocle          = "2.1.0"
   val newtype          = "0.4.4"
   val pprint           = "0.6.6"
@@ -42,12 +42,12 @@ object Versions {
   val slf4j            = "1.7.32"
   val slick            = "3.3.3"
   val shapeless        = "2.3.7"
-  val sttp             = "3.3.14"
+  val sttp             = "3.3.15"
   val upickle          = "1.2.2"
-  val zio              = "1.0.11"
-  val zioActors        = "0.0.9+3-737ae987-SNAPSHOT"
+  val zio              = "1.0.12"
+  val zioActors        = "0.0.9+42-f1493b59-SNAPSHOT"
   val zioCats          = "3.1.1.0"
-  val zioConfig        = "1.0.6"
+  val zioConfig        = "1.0.10"
   val zioQuery         = "0.2.10"
   val zioLogging       = "0.5.12"
   val zioProcess       = "0.3.0"
@@ -231,7 +231,7 @@ object Dependencies {
     "org.scalatest"  %% "scalatest"    % Versions.scalaTest,
     "org.scalacheck" %% "scalacheck"   % Versions.scalaCheck,
     "org.mockito"     % "mockito-core" % Versions.mockito
-  ) map (_ % "test")
+  ) map (_ % Test)
 
   val upickle: Seq[ModuleID] = Seq(
     "com.lihaoyi" %% "upickle" % Versions.upickle,

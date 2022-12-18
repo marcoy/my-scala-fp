@@ -7,7 +7,7 @@ addSbtPlugin("se.marcuslonnberg" % "sbt-docker" % "1.9.0")
 
 addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.9.9")
 
-addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.6.2")
+addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.6.4")
 
 addSbtPlugin("ch.epfl.scala" % "sbt-missinglink" % "0.3.3")
 libraryDependencies += "com.spotify" % "missinglink-core" % "0.2.5"
